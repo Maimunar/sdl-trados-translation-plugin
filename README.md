@@ -1,0 +1,2 @@
+# sdl-trados-plugin
+
