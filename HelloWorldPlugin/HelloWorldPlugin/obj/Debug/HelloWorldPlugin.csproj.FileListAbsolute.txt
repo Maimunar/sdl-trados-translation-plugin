@@ -1310,3 +1310,5 @@ C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\Hel
 C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\HelloWorldPlugin\HelloWorldPlugin\obj\Debug\HelloWorldPlugin.csproj.CopyComplete
 C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\HelloWorldPlugin\HelloWorldPlugin\obj\Debug\HelloWorldPlugin.dll
 C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\HelloWorldPlugin\HelloWorldPlugin\obj\Debug\HelloWorldPlugin.pdb
+C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\HelloWorldPlugin\HelloWorldPlugin\obj\Debug\HelloWorldPlugin.csprojAssemblyReference.cache
+C:\Users\Aleksandar\Desktop\Fontys Stuff\S3\GPS\HelloWorld\sdl-trados-plugin\HelloWorldPlugin\HelloWorldPlugin\obj\Debug\HelloWorldPlugin.g.resources
