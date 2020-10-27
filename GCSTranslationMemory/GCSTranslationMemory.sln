@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCSTranslationMemory", "GCSTranslationMemory\GCSTranslationMemory.csproj", "{8FB1FD7B-491A-4E92-BC0B-58308E987433}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FB1FD7B-491A-4E92-BC0B-58308E987433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB1FD7B-491A-4E92-BC0B-58308E987433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB1FD7B-491A-4E92-BC0B-58308E987433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB1FD7B-491A-4E92-BC0B-58308E987433}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A574B96A-C74E-4038-84EE-08EAB1232991}
+	EndGlobalSection
+EndGlobal
