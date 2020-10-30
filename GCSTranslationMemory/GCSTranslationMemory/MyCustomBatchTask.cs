@@ -47,7 +47,7 @@ namespace GCSTranslationMemory
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-             DialogResult res = MessageBox.Show($"Reference Numbers:\n{task.FullText}", "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+             DialogResult res = MessageBox.Show($"Reference Numbers:\n{task.ReferenceNumbers}", "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }
