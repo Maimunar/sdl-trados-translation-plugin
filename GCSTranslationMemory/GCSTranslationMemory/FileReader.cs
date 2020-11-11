@@ -38,16 +38,28 @@ namespace GCSTranslationMemory
         {
             foreach (ISegmentPair item in paragraphUnit.SegmentPairs)
             {
-               MatchCollection matches = Regex.Matches(item.Source.ToString(), @"[0-9]{4}[/][0-9]{4}([/][a-zA-Z]{2,3})?");
-               foreach(Match match in matches)
-                    if(match.Value[0] == '2')
-                    referenceNumbers += $"{match.Value}\n";
+                MatchCollection matches = Regex.Matches(item.Source.ToString(), @"([0-9]{4}[/][0-9]{4}[/][a-zA-Z]{2})|([0-9]{4}[/][0-9]{1,4})|([0-9]{1,4}[/][0-9]{4})");
+                foreach(Match match in matches)
+                    if(HasAYear(match))
+                        referenceNumbers += $"{match.Value}\n";
             }
         }
         //This is unused, might be needed in the future. This executes last from the class
         public override void Complete()
         {
             base.Complete();
+        }
+
+        bool HasAYear(Match match)
+        {
+            string[] values = match.Value.Split('/');
+            for (int i = 0; i < 2; i++)
+            {
+                int valueInt = Convert.ToInt16(values[i]);
+                if (valueInt > 1950 && valueInt < 2030)
+                    return true;
+            }
+            return false;
         }
     }
 }
