@@ -38,7 +38,7 @@ namespace GCSTranslationMemory
         {
             foreach (ISegmentPair item in paragraphUnit.SegmentPairs)
             {
-                MatchCollection matches = Regex.Matches(item.Source.ToString(), @"([0-9]{4}[/][0-9]{4}[/][a-zA-Z]{2})|([0-9]{4}[/][0-9]{1,4})|([0-9]{1,4}[/][0-9]{4})");
+                MatchCollection matches = Regex.Matches(item.Source.ToString(), @"([0-9]{1,4}[/][0-9]{4}([/][a-zA-Z]{2})?)|([0-9]{4}[/][0-9]{1,4}([/][a-zA-Z]{2})?)");
                 foreach(Match match in matches)
                     if(HasAYear(match))
                         referenceNumbers += $"{match.Value}\n";
