@@ -4,13 +4,19 @@ using System.Linq;
 
 namespace GCSTranslationMemory
 {
-    // This class is a general type utility class
+    /// <summary>
+    /// general type utility clas
+    /// </summary>
     public class Utility
     {
         private static Random random = new Random();
 
-        // Generates a n-length random string
-        // Used for creation of translation memory names
+        /// <summary>
+        /// Generates a n-length random string
+        /// Used for creation of translation memory names
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
         public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

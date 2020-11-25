@@ -6,9 +6,11 @@ using Sdl.LanguagePlatform.TranslationMemoryApi;
 
 namespace GCSTranslationMemory
 {
-    // This class handles the creation of a File-Based Translation Memory
-    // It follows the guide on here:
-    // http://producthelp.sdl.com/SDK/TranslationMemoryApi/2017/html/864bc430-493f-41ce-9848-28052a314625.htm
+    /// <summary>
+    /// This class handles the creation of a File-Based Translation Memory
+    /// It follows the guide on here: 
+    /// http://producthelp.sdl.com/SDK/TranslationMemoryApi/2017/html/864bc430-493f-41ce-9848-28052a314625.htm
+    ///  /// </summary>
     public class TMCreator
     {
         #region "create TM"
@@ -22,7 +24,8 @@ namespace GCSTranslationMemory
                 this.GetFuzzyIndexes(),
                 this.GetRecognizers(),
                 TokenizerFlags.AllFlags,
-                WordCountFlags.AllFlags
+                WordCountFlags.AllFlags, 
+                true
                 );
 
             tm.LanguageResourceBundles.Clear();

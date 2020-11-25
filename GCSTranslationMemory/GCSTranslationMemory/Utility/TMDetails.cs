@@ -2,7 +2,10 @@
 
 namespace GCSTranslationMemory
 {
-    // This class stores the details needed for the translation memory
+
+    /// <summary>
+    /// This class stores the details needed for the translation memory
+    /// </summary>
     public class TMDetails
     {
         private CultureInfo sourceLanguage;

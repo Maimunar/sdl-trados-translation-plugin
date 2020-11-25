@@ -19,7 +19,9 @@ using System.IO;
 
 namespace GCSTranslationMemory
 {
-    // Class handles the execution of the GCS batch task
+    ///<summary>
+    /// Class handles the execution of the GCS batch task
+    /// </summary>
     [AutomaticTask("My_Custom_Batch_Task_ID",
                    "My_Custom_Batch_Task_Name",
                    "My_Custom_Batch_Task_Description",
