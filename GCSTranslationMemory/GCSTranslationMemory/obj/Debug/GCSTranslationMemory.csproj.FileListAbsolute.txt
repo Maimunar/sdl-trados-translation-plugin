@@ -646,4 +646,3 @@ E:\OneDrive\OneDrive - Office 365 Fontys\Projects\Uni\GCSTranslationMemory\GCSTr
 E:\OneDrive\OneDrive - Office 365 Fontys\Projects\Uni\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\ko-KR\Sdl.MultiTerm.Client.Api.resources.dll
 E:\OneDrive\OneDrive - Office 365 Fontys\Projects\Uni\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\ru-RU\Sdl.MultiTerm.Client.Api.resources.dll
 E:\OneDrive\OneDrive - Office 365 Fontys\Projects\Uni\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\zh-CN\Sdl.MultiTerm.Client.Api.resources.dll
-E:\OneDrive\OneDrive - Office 365 Fontys\Projects\Uni\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csprojAssemblyReference.cache

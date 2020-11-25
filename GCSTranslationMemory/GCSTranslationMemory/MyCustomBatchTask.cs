@@ -15,9 +15,11 @@ using Sdl.ProjectAutomation.FileBased;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.FileTypeSupport.Framework.BilingualApi;
 using Sdl.LanguagePlatform.Core;
+using System.IO;
 
 namespace GCSTranslationMemory
 {
+    // Class handles the execution of the GCS batch task
     [AutomaticTask("My_Custom_Batch_Task_ID",
                    "My_Custom_Batch_Task_Name",
                    "My_Custom_Batch_Task_Description",
@@ -27,19 +29,20 @@ namespace GCSTranslationMemory
     class MyCustomBatchTask : AbstractFileContentProcessingAutomaticTask
     {
         private MyCustomBatchTaskSettings _settings;
-        //task variable is what we use to read the file's content
         FileReader task;
 
         protected override void OnInitializeTask()
         {
-            //there are no settings currently, only a template of them if needed
+            // Note: there are no settings currently, only a template of them if needed
             _settings = GetSetting<MyCustomBatchTaskSettings>();
         }
 
         protected override void ConfigureConverter(ProjectFile projectFile, IMultiFileConverter multiFileConverter)
         {
-            //Creating a new FileReader and giving it access to the settings (unneeded currently) and the file's path; parsing text afterwards
-            task = new FileReader(_settings, projectFile.LocalFilePath);
+            // Creating a new FileReader and giving it access to the settings (unneeded currently) and the file; parsing text afterwards
+            // The FileReader handles the task logic of searching the reference numbers, creating and populating the translation memory
+            // And providing the reference numbers back
+            task = new FileReader(_settings, projectFile);
             multiFileConverter.AddBilingualProcessor(task);
             multiFileConverter.Parse();
         }
@@ -47,7 +50,10 @@ namespace GCSTranslationMemory
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-             DialogResult res = MessageBox.Show($"Reference Numbers:\n{task.ReferenceNumbers}", "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            string s = "Reference Numbers:\n";
+            foreach (string refNumber in task.ReferenceNumbers.Distinct())
+                s += $"{refNumber}\n";
+             DialogResult res = MessageBox.Show(s, "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }
