@@ -103,6 +103,8 @@ namespace GCSTranslationMemory
         // This executes last from the class
         public override void Complete()
         {
+            RegularIterator iter = new RegularIterator();
+            tm.AlignTranslationUnits(false, true, ref iter);
             tm.Save();
             TMExporter objTmExport = new TMExporter();
             
@@ -126,6 +128,7 @@ namespace GCSTranslationMemory
             // Prevention of Out of Range Exception in case documents are not aligned
             int paragraphCount = Math.Max(source.Count, target.Count);
             // Creation of all translation units for a specific document
+
             for (int i = 0; i < paragraphCount; i++)
             {
                 TranslationUnit tu = new TranslationUnit();
@@ -188,6 +191,6 @@ namespace GCSTranslationMemory
             return numbers;
         }
 
-        public bool IsAFaultyPair(string source, string target) => Regex.IsMatch(source, @"^[0-9]+\).+") && Regex.IsMatch(target, @"^([0-9]+\)$");
+        public bool IsAFaultyPair(string source, string target) => Regex.IsMatch(source, @"^[0-9]+\).+") && Regex.IsMatch(target, @"^\([0-9]+\)$");
     }
 }
