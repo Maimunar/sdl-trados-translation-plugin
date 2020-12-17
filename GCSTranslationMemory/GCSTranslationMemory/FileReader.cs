@@ -103,8 +103,10 @@ namespace GCSTranslationMemory
         // This executes last from the class
         public override void Complete()
         {
-            RegularIterator iter = new RegularIterator();
-            tm.AlignTranslationUnits(false, true, ref iter);
+            // TODO: TEMP
+            //RegularIterator iter = new RegularIterator();
+            //tm.AlignTranslationUnits(false, true, ref iter);
+
             tm.Save();
             TMExporter objTmExport = new TMExporter();
             
