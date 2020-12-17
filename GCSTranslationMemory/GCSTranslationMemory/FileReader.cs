@@ -126,11 +126,22 @@ namespace GCSTranslationMemory
             List<string> target = HtmlUtility.GetParagraphs(targetHtml);
 
             // Prevention of Out of Range Exception in case documents are not aligned
-            int paragraphCount = Math.Max(source.Count, target.Count);
+            int paragraphCount = Math.Min(source.Count, target.Count);
             // Creation of all translation units for a specific document
 
             for (int i = 0; i < paragraphCount; i++)
             {
+                if (IsAFaultyPair(source[i], target[i]))
+                {
+                    int nextIndex = i + 1;
+                    if(nextIndex < paragraphCount)
+                    {
+                        target.RemoveAt(i);
+                        target.RemoveAt(nextIndex);
+                        target.Insert(i, $"{target[i]} {target[nextIndex]}");
+                    }
+                }
+
                 TranslationUnit tu = new TranslationUnit();
                 tu.SourceSegment = new Segment(tmDetails.SourceLanguage);
                 tu.TargetSegment = new Segment(tmDetails.TargetLanguage);
@@ -138,6 +149,9 @@ namespace GCSTranslationMemory
                 tu.TargetSegment.Add(target.ElementAtOrDefault(i) != null ? target[i] : "");
                 tm.LanguageDirection.AddTranslationUnit(tu, Utility.GetImportSettings());
             }
+
+            MessageBox.Show(source.Count.ToString());
+            MessageBox.Show(target.Count.ToString());
         }
 
         /// <summary>
