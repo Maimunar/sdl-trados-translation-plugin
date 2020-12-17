@@ -58,8 +58,6 @@ namespace GCSTranslationMemory
             tmDetails.SourceLanguage = projectFile.SourceFile.Language.CultureInfo;
             tmDetails.TargetLanguage = projectFile.Language.CultureInfo;
 
-
-
             // Creating a new folder structure for the translation memory
             string dirPath = Path.GetDirectoryName(projectFile.LocalFilePath);
             string fileName = Path.GetFileNameWithoutExtension(projectFile.LocalFilePath);
@@ -189,5 +187,7 @@ namespace GCSTranslationMemory
             }
             return numbers;
         }
+
+        public bool IsAFaultyPair(string source, string target) => Regex.IsMatch(source, @"^[0-9]+\).+") && Regex.IsMatch(target, @"^([0-9]+\)$");
     }
 }
