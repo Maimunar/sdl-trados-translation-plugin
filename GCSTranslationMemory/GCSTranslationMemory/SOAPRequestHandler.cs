@@ -45,7 +45,7 @@ namespace GCSTranslationMemory
 	        </soap:Header>
 	        <soap:Body>
 		        <sear:searchRequest>
-			        <sear:expertQuery><![CDATA[(DTA = { docYear } AND DTN = { docNumber } ) AND FM_CODED = DIR  AND VV = TRUE]]></sear:expertQuery>
+			        <sear:expertQuery><![CDATA[(DTA = { docYear } AND DTN = { docNumber } ) AND VV = TRUE]]></sear:expertQuery>
                     <sear:page>1</sear:page>
 			        <sear:pageSize>100</sear:pageSize>
 			        <sear:searchLanguage>en</sear:searchLanguage>
