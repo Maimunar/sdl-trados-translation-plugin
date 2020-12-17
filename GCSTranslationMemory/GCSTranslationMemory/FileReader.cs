@@ -205,6 +205,6 @@ namespace GCSTranslationMemory
             return numbers;
         }
 
-        public bool IsAFaultyPair(string source, string target) => Regex.IsMatch(source, @"^[0-9]+\).+") && Regex.IsMatch(target, @"^\([0-9]+\)$");
+        public bool IsAFaultyPair(string source, string target) => Regex.IsMatch(source, @"^[0-9a-zA-Z]+[\)\.].+") && Regex.IsMatch(target, @"^\([0-9a-zA-Z]+\)$");
     }
 }
