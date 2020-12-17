@@ -91,7 +91,12 @@ namespace GCSTranslationMemory
                             XmlNodeList nodeList = requestHandler.Execute(pair.Item1, pair.Item2);
 
                             foreach (XmlNode node in nodeList)
+                            {
                                 CreateEURLEXTranslationMemory(node.InnerText, ref tm);
+                                break;
+                            }
+                                
+
                         }
                         //CreateEURLEXTranslationMemory("32006R2031", ref tm);
                         referenceNumbers.Add(match.Value);
