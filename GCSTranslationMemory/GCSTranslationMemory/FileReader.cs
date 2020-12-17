@@ -138,9 +138,10 @@ namespace GCSTranslationMemory
                     int nextIndex = i + 1;
                     if(nextIndex < paragraphCount)
                     {
+                        string newParagraph = $"{target[i]} {target[nextIndex]}";
                         target.RemoveAt(i);
                         target.RemoveAt(nextIndex);
-                        target.Insert(i, $"{target[i]} {target[nextIndex]}");
+                        target.Insert(i, newParagraph);
                     }
                 }
 
