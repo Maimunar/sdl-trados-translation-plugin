@@ -140,7 +140,7 @@ namespace GCSTranslationMemory
                     {
                         string newParagraph = $"{target[i]} {target[nextIndex]}";
                         target.RemoveAt(i);
-                        target.RemoveAt(nextIndex);
+                        target.RemoveAt(i);
                         target.Insert(i, newParagraph);
                     }
                 }
