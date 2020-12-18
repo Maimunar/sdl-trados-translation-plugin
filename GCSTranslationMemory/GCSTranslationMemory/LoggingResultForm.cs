@@ -8,6 +8,8 @@ namespace GCSTranslationMemory
         public LoggingResultForm()
         {
             InitializeComponent();
+
+            MessageBox.Show("Results form initialized");
             //lbLogs.DataSource = logs;
             //foreach(string log in logs)
             //{
@@ -15,6 +17,6 @@ namespace GCSTranslationMemory
             //}
         }
 
-        private void btnClose_Click(object sender, EventArgs e) => this.Close();
+        private void btnClose_Click(object sender, EventArgs e) { this.Close(); }
     }
 }

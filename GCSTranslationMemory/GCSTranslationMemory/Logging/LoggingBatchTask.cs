@@ -53,7 +53,11 @@ namespace GCSTranslationMemory
 
             LoggingResultForm output = new LoggingResultForm();
 
+            MessageBox.Show("Before new form");
+
             output.Show();
+
+            MessageBox.Show("After new form");
 
             //string output = "Logs:\n";
 
