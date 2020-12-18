@@ -53,9 +53,13 @@ namespace GCSTranslationMemory
         {
             List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).Reverse().ToList();
 
-            List<string[]> logs = new List<string[]>();
+            List<object> logs = new List<object>();
 
-            foreach(string line in lines) logs.Add(line.Split('|'));
+            foreach(string line in lines)
+            {
+                string[] columns = line.Split('|');
+                logs.Add( new { Time = columns[0], Type = columns[1], Description = columns[2] });
+            }
 
             LoggingResultForm output = new LoggingResultForm(logs);
 
