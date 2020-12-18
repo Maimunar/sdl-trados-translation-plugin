@@ -31,9 +31,9 @@ namespace GCSTranslationMemory
     class LoggingBatchTask : AbstractFileContentProcessingAutomaticTask
     {
         private MyCustomBatchTaskSettings _settings;
-        FileReader task;
-
         BatchTaskLogger logger;
+
+        string dirPath;
 
         protected override void OnInitializeTask()
         {
@@ -41,33 +41,24 @@ namespace GCSTranslationMemory
             _settings = GetSetting<MyCustomBatchTaskSettings>();
         }
 
-        protected override void ConfigureConverter(ProjectFile projectFile, IMultiFileConverter multiFileConverter)
+        protected override void ConfigureConverter(ProjectFile projectFile, IMultiFileConverter multiFileConverter) 
         {
-            // Creating a new FileReader and giving it access to the settings (unneeded currently) and the file; parsing text afterwards
-            // The FileReader handles the task logic of searching the reference numbers, creating and populating the translation memory
-            // And providing the reference numbers back
-
-            logger = new BatchTaskLogger(Path.GetDirectoryName(projectFile.LocalFilePath), LoggingLevels.DEBUG);
-
-            task = new FileReader(_settings, projectFile, ref logger);
-            multiFileConverter.AddBilingualProcessor(task);
-            multiFileConverter.Parse();
+            dirPath = Path.GetDirectoryName(projectFile.LocalFilePath);
         }
 
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-            string s = "Reference Numbers:\n";
-            foreach (string refNumber in task.ReferenceNumbers.Distinct())
-                s += $"{refNumber}\n";
+            IEnumerable<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt"));
 
-            if (logger.LogEntries.Count > 0)
+            string output = "Logs:\n";
+
+            for (int i = (lines.Count() - 1); i >= 0; i--)
             {
-                s += "\nFound errors:\n";
-                foreach (string log in logger.LogEntries) s += $"{log}\n";
+                output += $"{lines.ElementAt(i)}\n";
             }
 
-            DialogResult res = MessageBox.Show(s, "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show(output, "Logs", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }
