@@ -116,6 +116,7 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="LoggingBatchTask.cs" />
     <Compile Include="Logging\LoggingLevels.cs" />
+    <Compile Include="Logging\LogUnit.cs" />
     <Compile Include="ReferenceNumbersForm.cs">
       <SubType>Form</SubType>
     </Compile>

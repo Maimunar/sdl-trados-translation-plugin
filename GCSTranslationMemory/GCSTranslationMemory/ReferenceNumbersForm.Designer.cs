@@ -69,8 +69,10 @@ namespace GCSTranslationMemory
             this.errorDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.errorDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.errorDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.errorDataGrid.ColumnHeadersVisible = false;
             this.errorDataGrid.Location = new System.Drawing.Point(12, 231);
             this.errorDataGrid.Name = "errorDataGrid";
+            this.errorDataGrid.RowHeadersVisible = false;
             this.errorDataGrid.Size = new System.Drawing.Size(336, 188);
             this.errorDataGrid.TabIndex = 3;
             // 

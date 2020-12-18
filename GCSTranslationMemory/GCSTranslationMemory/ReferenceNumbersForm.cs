@@ -12,7 +12,7 @@ namespace GCSTranslationMemory
 {
     public partial class ReferenceNumbersForm : Form
     {
-        public ReferenceNumbersForm(List<string> refNumbers, List<string> errors)
+        public ReferenceNumbersForm(List<string> refNumbers, List<LogUnit> errors)
         {
             InitializeComponent();
 

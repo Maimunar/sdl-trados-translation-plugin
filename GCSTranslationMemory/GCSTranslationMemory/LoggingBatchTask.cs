@@ -51,7 +51,10 @@ namespace GCSTranslationMemory
         {
             List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).Reverse().ToList();
 
-            LoggingResultForm output = new LoggingResultForm(lines);
+            List<LogUnit> logs = new List<LogUnit>();
+            foreach (string line in lines) logs.Add(new LogUnit(line));
+
+            LoggingResultForm output = new LoggingResultForm(logs);
             output.ShowDialog();
         }
     }
