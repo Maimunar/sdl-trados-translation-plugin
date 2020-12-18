@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Logging_Batch_Task_Description" xml:space="preserve">
+    <value>GCS - View Logfiles</value>
+  </data>
+  <data name="Logging_Batch_Task_ID" xml:space="preserve">
+    <value>GCS - Logfiles</value>
+  </data>
+  <data name="Logging_Batch_Task_Name" xml:space="preserve">
+    <value>GCS - View Logfiles</value>
+  </data>
   <data name="My_Custom_Batch_Task_Description" xml:space="preserve">
     <value>GCS - Create Translation Memory</value>
   </data>

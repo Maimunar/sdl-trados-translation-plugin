@@ -46,10 +46,6 @@ namespace GCSTranslationMemory
                 DirectoryInfo logsDir = Directory.CreateDirectory($"{_dirPath}\\logs");
                 fs = new FileStream(Path.Combine(logsDir.FullName, _fileName), FileMode.OpenOrCreate, FileAccess.Write);
                 sw = new StreamWriter(fs);
-
-                MessageBox.Show(Path.Combine(logsDir.FullName, _fileName));
-
-                sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] Logger initialized");
             }
             catch (Exception ex)
             {
@@ -70,8 +66,6 @@ namespace GCSTranslationMemory
             {
                 fs = new FileStream(Path.Combine(_dirPath, "logs", _fileName), FileMode.Append, FileAccess.Write);
                 sw = new StreamWriter(fs);
-
-                MessageBox.Show(Path.Combine(_dirPath, "logs", _fileName));
 
                 sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] {logLevel.ToString().PadRight(10)} | {msg}");
             }

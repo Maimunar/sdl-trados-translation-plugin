@@ -107,6 +107,7 @@
     <Compile Include="Exceptions\ReferenceNumberNotFoundException.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="LoggingBatchTask.cs" />
     <Compile Include="LoggingLevels.cs" />
     <Compile Include="SOAPRequestHandler.cs" />
     <Compile Include="TradosUtility\TMExporter.cs" />
