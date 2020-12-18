@@ -33,9 +33,7 @@ namespace GCSTranslationMemory
     class LoggingBatchTask : AbstractFileContentProcessingAutomaticTask
     {
         private MyCustomBatchTaskSettings _settings;
-        BatchTaskLogger logger;
-
-        string dirPath;
+        private string dirPath;
 
         protected override void OnInitializeTask()
         {
@@ -53,26 +51,8 @@ namespace GCSTranslationMemory
         {
             List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).Reverse().ToList();
 
-            List<object> logs = new List<object>();
-
-            foreach(string line in lines)
-            {
-                string[] columns = line.Split('|');
-                logs.Add( new { Time = columns[0], Type = columns[1], Description = columns[2] });
-            }
-
-            LoggingResultForm output = new LoggingResultForm(logs);
-
+            LoggingResultForm output = new LoggingResultForm(lines);
             output.ShowDialog();
-
-            //string output = "Logs:\n";
-
-            //for (int i = (lines.Count() - 1); i >= 0; i--)
-            //{
-            //    output += $"{lines.ElementAt(i)}\n";
-            //}
-
-            //DialogResult res = MessageBox.Show(output, "Logs", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }

@@ -650,9 +650,11 @@ D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTr
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\GCSTranslationMemory.pdb
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\Sdl.Core.PluginFramework.dll
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\bin\Debug\Sdl.Core.PluginFramework.PackageSupport.dll
+D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csprojAssemblyReference.cache
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.LoggingResultForm.resources
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.MyCustomBatchTaskSettingsControl.resources
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.PluginResources.resources
+D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.ReferenceNumbersForm.resources
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csproj.GenerateResource.cache
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csproj.CoreCompileInputs.cache
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csproj.CopyComplete

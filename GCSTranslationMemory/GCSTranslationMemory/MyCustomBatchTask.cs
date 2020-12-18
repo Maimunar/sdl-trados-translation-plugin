@@ -57,9 +57,12 @@ namespace GCSTranslationMemory
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-            string s = "Reference Numbers:\n";
-            foreach (string refNumber in task.ReferenceNumbers.Distinct())
-                s += $"{refNumber}\n";
+            ReferenceNumbersForm output = new ReferenceNumbersForm(task.ReferenceNumbers.Distinct().ToList(), logger.LogEntries);
+            output.ShowDialog();
+
+            //string s = "Reference Numbers:\n";
+            //foreach (string refNumber in task.ReferenceNumbers.Distinct())
+            //    s += $"{refNumber}\n";
 
             //TODO: Add log entries to result box
             //TODO: Convert MessageBox to a custom dialog form
@@ -70,7 +73,7 @@ namespace GCSTranslationMemory
             //    foreach (string log in logger.LogEntries) s += $"{log}\n";
             //}
 
-            DialogResult res = MessageBox.Show(s, "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            //DialogResult res = MessageBox.Show(s, "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }

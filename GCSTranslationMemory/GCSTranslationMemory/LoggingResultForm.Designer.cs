@@ -32,9 +32,6 @@ namespace GCSTranslationMemory
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.logsDataGrid = new System.Windows.Forms.DataGridView();
-            this.logsTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logsDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.logsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +50,9 @@ namespace GCSTranslationMemory
             this.logsDataGrid.AllowUserToAddRows = false;
             this.logsDataGrid.AllowUserToDeleteRows = false;
             this.logsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.logsDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.logsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.logsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.logsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.logsTime,
-            this.logsType,
-            this.logsDescription});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -70,30 +64,10 @@ namespace GCSTranslationMemory
             this.logsDataGrid.Location = new System.Drawing.Point(12, 12);
             this.logsDataGrid.Name = "logsDataGrid";
             this.logsDataGrid.ReadOnly = true;
+            this.logsDataGrid.RowHeadersVisible = false;
             this.logsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logsDataGrid.Size = new System.Drawing.Size(766, 397);
             this.logsDataGrid.TabIndex = 2;
-            // 
-            // logsTime
-            // 
-            this.logsTime.FillWeight = 50F;
-            this.logsTime.HeaderText = "Time";
-            this.logsTime.Name = "logsTime";
-            this.logsTime.ReadOnly = true;
-            // 
-            // logsType
-            // 
-            this.logsType.FillWeight = 40F;
-            this.logsType.HeaderText = "Type";
-            this.logsType.Name = "logsType";
-            this.logsType.ReadOnly = true;
-            // 
-            // logsDescription
-            // 
-            this.logsDescription.FillWeight = 150F;
-            this.logsDescription.HeaderText = "Description";
-            this.logsDescription.Name = "logsDescription";
-            this.logsDescription.ReadOnly = true;
             // 
             // LoggingResultForm
             // 
@@ -102,8 +76,10 @@ namespace GCSTranslationMemory
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.logsDataGrid);
             this.Controls.Add(this.btnClose);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "LoggingResultForm";
-            this.Text = "LoggingResultForm";
+            this.Text = "Logs";
             ((System.ComponentModel.ISupportInitialize)(this.logsDataGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -112,8 +88,5 @@ namespace GCSTranslationMemory
         #endregion
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView logsDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logsTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logsType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logsDescription;
     }
 }

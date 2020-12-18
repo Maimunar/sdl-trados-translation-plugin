@@ -116,7 +116,12 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="LoggingBatchTask.cs" />
     <Compile Include="Logging\LoggingLevels.cs" />
-    <Compile Include="Logging\LogUnit.cs" />
+    <Compile Include="ReferenceNumbersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReferenceNumbersForm.Designer.cs">
+      <DependentUpon>ReferenceNumbersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SOAPRequestHandler.cs" />
     <Compile Include="TradosUtility\TMExporter.cs" />
     <Compile Include="Utility\HtmlUtility.cs" />
@@ -141,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PluginResources.resx" />
     <Content Include="pluginpackage.manifest.xml" />
+    <EmbeddedResource Include="ReferenceNumbersForm.resx">
+      <DependentUpon>ReferenceNumbersForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="GCS.snk" />

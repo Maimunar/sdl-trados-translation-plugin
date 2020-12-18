@@ -7,7 +7,7 @@ namespace GCSTranslationMemory
     public partial class LoggingResultForm : Form
     {
         //TODO: Properly comment this form
-        public LoggingResultForm(List<object> logs)
+        public LoggingResultForm(List<string> logs)
         {
             InitializeComponent();
             logsDataGrid.DataSource = logs;
