@@ -16,10 +16,10 @@ namespace GCSTranslationMemory
         {
             InitializeComponent();
             //lbLogs.DataSource = logs;
-            foreach(string log in logs)
-            {
-                lbLogs.Items.Add(log);
-            }
+            //foreach(string log in logs)
+            //{
+            //    lbLogs.Items.Add(log);
+            //}
         }
 
         private void btnClose_Click(object sender, EventArgs e) => this.Close();

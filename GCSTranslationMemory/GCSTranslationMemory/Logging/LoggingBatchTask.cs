@@ -44,6 +44,12 @@ namespace GCSTranslationMemory
         protected override void ConfigureConverter(ProjectFile projectFile, IMultiFileConverter multiFileConverter) 
         {
             dirPath = Path.GetDirectoryName(projectFile.LocalFilePath);
+
+            List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).ToList();
+
+            LoggingResultForm output = new LoggingResultForm(lines);
+
+            output.Show();
         }
 
         //This executes last and shows a DialogBox with the needed info from the reader's property
