@@ -49,7 +49,7 @@ namespace GCSTranslationMemory
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-            IEnumerable<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt"));
+            List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).ToList();
 
             LoggingResultForm output = new LoggingResultForm(lines);
 

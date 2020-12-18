@@ -12,10 +12,12 @@ namespace GCSTranslationMemory
 {
     public partial class LoggingResultForm : Form
     {
-        public LoggingResultForm(IEnumerable<string> logs)
+        public LoggingResultForm(List<string> logs)
         {
             InitializeComponent();
             lbLogs.DataSource = logs;
         }
+
+        private void btnClose_Click(object sender, EventArgs e) => this.Close();
     }
 }
