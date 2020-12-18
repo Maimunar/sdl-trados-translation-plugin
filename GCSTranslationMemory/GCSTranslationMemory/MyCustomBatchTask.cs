@@ -47,9 +47,7 @@ namespace GCSTranslationMemory
             // The FileReader handles the task logic of searching the reference numbers, creating and populating the translation memory
             // And providing the reference numbers back
 
-            MessageBox.Show(projectFile.LocalFilePath);
-
-            logger = new BatchTaskLogger(projectFile.LocalFilePath, LoggingLevels.DEBUG);
+            logger = new BatchTaskLogger(Path.GetDirectoryName(projectFile.LocalFilePath), LoggingLevels.DEBUG);
 
             task = new FileReader(_settings, projectFile, ref logger);
             multiFileConverter.AddBilingualProcessor(task);
