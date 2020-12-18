@@ -50,6 +50,7 @@ namespace GCSTranslationMemory
             // 
             this.rtbRefNumbers.Location = new System.Drawing.Point(15, 25);
             this.rtbRefNumbers.Name = "rtbRefNumbers";
+            this.rtbRefNumbers.ReadOnly = true;
             this.rtbRefNumbers.Size = new System.Drawing.Size(333, 176);
             this.rtbRefNumbers.TabIndex = 1;
             this.rtbRefNumbers.Text = "";
@@ -81,6 +82,7 @@ namespace GCSTranslationMemory
             this.errorDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.errorDataGrid.Location = new System.Drawing.Point(12, 231);
             this.errorDataGrid.Name = "errorDataGrid";
+            this.errorDataGrid.ReadOnly = true;
             this.errorDataGrid.RowHeadersVisible = false;
             this.errorDataGrid.Size = new System.Drawing.Size(336, 188);
             this.errorDataGrid.TabIndex = 3;

@@ -19,6 +19,10 @@ using System.IO;
 
 namespace GCSTranslationMemory
 {
+    //TODO: Test all exceptions
+    //TODO: Write additional exceptions/logs
+    //TODO: Rename batch task to appropriate name
+
     ///<summary>
     /// Class handles the execution of the GCS batch task
     /// </summary>
