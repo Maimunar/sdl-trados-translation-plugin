@@ -15,7 +15,11 @@ namespace GCSTranslationMemory
         public LoggingResultForm(List<string> logs)
         {
             InitializeComponent();
-            lbLogs.DataSource = logs;
+            //lbLogs.DataSource = logs;
+            foreach(string log in logs)
+            {
+                lbLogs.Items.Add(log);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e) => this.Close();
