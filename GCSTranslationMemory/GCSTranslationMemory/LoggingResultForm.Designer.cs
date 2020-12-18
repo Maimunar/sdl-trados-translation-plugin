@@ -29,17 +29,8 @@ namespace GCSTranslationMemory
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbLogs = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lbLogs
-            // 
-            this.lbLogs.FormattingEnabled = true;
-            this.lbLogs.Location = new System.Drawing.Point(12, 12);
-            this.lbLogs.Name = "lbLogs";
-            this.lbLogs.Size = new System.Drawing.Size(766, 394);
-            this.lbLogs.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -57,7 +48,6 @@ namespace GCSTranslationMemory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lbLogs);
             this.Name = "LoggingResultForm";
             this.Text = "LoggingResultForm";
             this.ResumeLayout(false);
@@ -65,8 +55,6 @@ namespace GCSTranslationMemory
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbLogs;
         private System.Windows.Forms.Button btnClose;
     }
 }
