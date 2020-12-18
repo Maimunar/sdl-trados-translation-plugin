@@ -657,3 +657,4 @@ D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTr
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csproj.CopyComplete
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.dll
 D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.pdb
+D:\Archive\University\sem3\Amplexor\sdl-trados-plugin\GCSTranslationMemory\GCSTranslationMemory\obj\Debug\GCSTranslationMemory.csprojAssemblyReference.cache

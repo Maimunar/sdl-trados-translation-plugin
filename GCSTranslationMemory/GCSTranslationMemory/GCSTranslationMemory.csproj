@@ -102,7 +102,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchTaskLogger.cs" />
+    <Compile Include="Exceptions\ParagraphAlignmentException.cs" />
+    <Compile Include="Exceptions\ReferenceNumberNotFoundException.cs" />
     <Compile Include="FileReader.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggingLevels.cs" />
     <Compile Include="SOAPRequestHandler.cs" />
     <Compile Include="TradosUtility\TMExporter.cs" />
     <Compile Include="Utility\HtmlUtility.cs" />

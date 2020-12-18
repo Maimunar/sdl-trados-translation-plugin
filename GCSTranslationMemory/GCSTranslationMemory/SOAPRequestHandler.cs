@@ -5,13 +5,13 @@ using System.IO;
 
 namespace GCSTranslationMemory
 {
-    public class SOAPRequestHandler
+    public static class SOAPRequestHandler
     {
         /// <summary>
         /// Create a soap webrequest to [Url]
         /// </summary>
         /// <returns></returns>
-        public HttpWebRequest CreateWebRequest()
+        public static HttpWebRequest CreateWebRequest()
         {
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@"https://eur-lex.europa.eu/EURLexWebService");
             webRequest.Headers.Add(@"SOAP:Action");
@@ -29,7 +29,7 @@ namespace GCSTranslationMemory
         /// </summary>
         /// <param name="docYear"></param>
         /// <param name="docNumber"></param>
-        public XmlNodeList Execute(int docYear,int docNumber)
+        public static XmlNodeList Execute(int docYear,int docNumber)
         {
             HttpWebRequest request = CreateWebRequest();
             XmlDocument soapEnvelopeXml = new XmlDocument();
@@ -68,7 +68,6 @@ namespace GCSTranslationMemory
                     XmlNodeList address = xmlDoc.GetElementsByTagName("ID_CELEX");
 
                     return address;
-
                 }
             }
         }
