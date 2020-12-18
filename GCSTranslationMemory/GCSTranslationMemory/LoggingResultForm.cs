@@ -1,20 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace GCSTranslationMemory
 {
     public partial class LoggingResultForm : Form
     {
-        public LoggingResultForm()
+        public LoggingResultForm(List<string> logs)
         {
             InitializeComponent();
-
-            MessageBox.Show("Results form initialized");
-            //lbLogs.DataSource = logs;
-            //foreach(string log in logs)
-            //{
-            //    lbLogs.Items.Add(log);
-            //}
+            lbLogs.DataSource = logs;
         }
 
         private void btnClose_Click(object sender, EventArgs e) { this.Close(); }

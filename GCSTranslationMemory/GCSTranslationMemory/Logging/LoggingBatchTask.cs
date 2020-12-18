@@ -49,15 +49,11 @@ namespace GCSTranslationMemory
         //This executes last and shows a DialogBox with the needed info from the reader's property
         public override void TaskComplete()
         {
-            //List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).ToList();
+            List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).Reverse().ToList();
 
-            LoggingResultForm output = new LoggingResultForm();
+            LoggingResultForm output = new LoggingResultForm(lines);
 
-            MessageBox.Show("Before new form");
-
-            output.Show();
-
-            MessageBox.Show("After new form");
+            output.ShowDialog();
 
             //string output = "Logs:\n";
 
