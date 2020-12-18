@@ -51,14 +51,18 @@ namespace GCSTranslationMemory
         {
             IEnumerable<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt"));
 
-            string output = "Logs:\n";
+            LoggingResultForm output = new LoggingResultForm(lines);
 
-            for (int i = (lines.Count() - 1); i >= 0; i--)
-            {
-                output += $"{lines.ElementAt(i)}\n";
-            }
+            output.Show();
 
-            DialogResult res = MessageBox.Show(output, "Logs", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            //string output = "Logs:\n";
+
+            //for (int i = (lines.Count() - 1); i >= 0; i--)
+            //{
+            //    output += $"{lines.ElementAt(i)}\n";
+            //}
+
+            //DialogResult res = MessageBox.Show(output, "Logs", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }

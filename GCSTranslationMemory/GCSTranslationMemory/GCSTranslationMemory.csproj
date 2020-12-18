@@ -95,6 +95,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System" />
@@ -106,9 +107,15 @@
     <Compile Include="Exceptions\ParagraphAlignmentException.cs" />
     <Compile Include="Exceptions\ReferenceNumberNotFoundException.cs" />
     <Compile Include="FileReader.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="LoggingBatchTask.cs" />
-    <Compile Include="LoggingLevels.cs" />
+    <Compile Include="LoggingResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoggingResultForm.Designer.cs">
+      <DependentUpon>LoggingResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggingBatchTask.cs" />
+    <Compile Include="Logging\LoggingLevels.cs" />
     <Compile Include="SOAPRequestHandler.cs" />
     <Compile Include="TradosUtility\TMExporter.cs" />
     <Compile Include="Utility\HtmlUtility.cs" />
@@ -125,6 +132,9 @@
     <Compile Include="Utility\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LoggingResultForm.resx">
+      <DependentUpon>LoggingResultForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyCustomBatchTaskSettingsControl.resx">
       <DependentUpon>MyCustomBatchTaskSettingsControl.cs</DependentUpon>
     </EmbeddedResource>
