@@ -122,14 +122,14 @@ namespace GCSTranslationMemory
         private void CreateEURLEXTranslationMemory(string celex_id, ref FileBasedTranslationMemory tm)
         {
             // Getting the full html code for the source and target language and extracting the paragraphs
-            string sourceHtml = HtmlUtility.GetHTMLEurLex(celex_id, tmDetails.SourceLanguage.TwoLetterISOLanguageName);
-            string targetHtml = HtmlUtility.GetHTMLEurLex(celex_id, tmDetails.TargetLanguage.TwoLetterISOLanguageName);
-            List<string> source = HtmlUtility.GetParagraphs(sourceHtml);
-            List<string> target = HtmlUtility.GetParagraphs(targetHtml);
+            List<string> source = HtmlUtility.GetParagraphs(celex_id, tmDetails.SourceLanguage.TwoLetterISOLanguageName);
+            List<string> target = HtmlUtility.GetParagraphs(celex_id, tmDetails.TargetLanguage.TwoLetterISOLanguageName);
 
             // Prevention of Out of Range Exception in case documents are not aligned
             int paragraphCount = Math.Min(source.Count, target.Count);
             // Creation of all translation units for a specific document
+
+            // TODO: Log all documents (their CELEX numbers) that do not have equal length between languages (which results in missing translation pairs in translation memory)
 
             for (int i = 0; i < paragraphCount; i++)
             {
@@ -148,10 +148,17 @@ namespace GCSTranslationMemory
                 TranslationUnit tu = new TranslationUnit();
                 tu.SourceSegment = new Segment(tmDetails.SourceLanguage);
                 tu.TargetSegment = new Segment(tmDetails.TargetLanguage);
-                tu.SourceSegment.Add(source.ElementAtOrDefault(i) != null ? source[i] : "");
-                tu.TargetSegment.Add(target.ElementAtOrDefault(i) != null ? target[i] : "");
+                tu.SourceSegment.Add(source.ElementAtOrDefault(i) != null ? source[i] : "KUREC");
+                tu.TargetSegment.Add(target.ElementAtOrDefault(i) != null ? target[i] : "KUREC");
                 tm.LanguageDirection.AddTranslationUnit(tu, Utility.GetImportSettings());
             }
+
+            TranslationUnit tuTemp = new TranslationUnit();
+            tuTemp.SourceSegment = new Segment(tmDetails.SourceLanguage);
+            tuTemp.TargetSegment = new Segment(tmDetails.TargetLanguage);
+            tuTemp.SourceSegment.Add($"End of source text for document with CELEX: {celex_id}");
+            tuTemp.TargetSegment.Add($"End of target text for document with CELEX: {celex_id}");
+            tm.LanguageDirection.AddTranslationUnit(tuTemp, Utility.GetImportSettings());
 
             MessageBox.Show(source.Count.ToString());
             MessageBox.Show(target.Count.ToString());

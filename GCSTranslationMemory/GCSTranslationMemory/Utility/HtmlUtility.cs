@@ -58,6 +58,8 @@ namespace GCSTranslationMemory
             return paragraphs;
         }
 
+        public static List<string> GetParagraphs(string celex, string language) => GetParagraphs(GetHTMLEurLex(celex, language));
+
         /// <summary>
         /// Receives an html input and strips it of any html tags it finds
         /// </summary>
