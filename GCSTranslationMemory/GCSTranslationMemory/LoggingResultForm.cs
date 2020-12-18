@@ -12,7 +12,7 @@ namespace GCSTranslationMemory
 {
     public partial class LoggingResultForm : Form
     {
-        public LoggingResultForm(List<string> logs)
+        public LoggingResultForm()
         {
             InitializeComponent();
             //lbLogs.DataSource = logs;
