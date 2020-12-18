@@ -10,6 +10,7 @@ namespace GCSTranslationMemory
     public class Logger
     {
         private LoggingLevels loggingLevel;
+        private string _dirPath;
         private string _fileName;
 
         public LoggingLevels LoggingLevel
@@ -18,14 +19,16 @@ namespace GCSTranslationMemory
             set { this.loggingLevel = value; }
         }
 
-        public Logger()
+        public Logger(string dirPath)
         {
+            this._dirPath = dirPath;
             this.LoggingLevel = LoggingLevels.INFO;
             Initilization();
         }
 
-        public Logger(LoggingLevels logLevel)
+        public Logger(string dirPath, LoggingLevels logLevel)
         {
+            this._dirPath = dirPath;
             this.loggingLevel = logLevel;
             Initilization();
         }
@@ -36,13 +39,14 @@ namespace GCSTranslationMemory
 
             FileStream fs = null;
             StreamWriter sw = null;
+
             try
             {
-                Directory.CreateDirectory("logs");
-                fs = new FileStream(Path.Combine("logs", _fileName), FileMode.OpenOrCreate, FileAccess.Write);
+                DirectoryInfo logsDir = Directory.CreateDirectory($"{_dirPath}\\logs");
+                fs = new FileStream(Path.Combine(logsDir.FullName, _fileName), FileMode.OpenOrCreate, FileAccess.Write);
                 sw = new StreamWriter(fs);
 
-                sw.WriteLine($"[{DateTime.Now}] Logger initialized");
+                sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] Logger initialized");
             }
             catch (Exception ex)
             {
@@ -58,12 +62,13 @@ namespace GCSTranslationMemory
         {
             FileStream fs = null;
             StreamWriter sw = null;
+
             try
             {
-                fs = new FileStream(Path.Combine("logs", _fileName), FileMode.Append, FileAccess.Write);
+                fs = new FileStream(Path.Combine(_dirPath, "logs", _fileName), FileMode.Append, FileAccess.Write);
                 sw = new StreamWriter(fs);
 
-                sw.WriteLine($"[{DateTime.Now}] {logLevel.ToString().PadRight(10)} | {msg}");
+                sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] {logLevel.ToString().PadRight(10)} | {msg}");
             }
             catch (IOException ex)
             {

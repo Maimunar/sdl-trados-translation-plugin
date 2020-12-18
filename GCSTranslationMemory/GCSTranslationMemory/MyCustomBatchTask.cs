@@ -39,8 +39,6 @@ namespace GCSTranslationMemory
         {
             // Note: there are no settings currently, only a template of them if needed
             _settings = GetSetting<MyCustomBatchTaskSettings>();
-
-            logger = new BatchTaskLogger(LoggingLevels.DEBUG);
         }
 
         protected override void ConfigureConverter(ProjectFile projectFile, IMultiFileConverter multiFileConverter)
@@ -48,6 +46,9 @@ namespace GCSTranslationMemory
             // Creating a new FileReader and giving it access to the settings (unneeded currently) and the file; parsing text afterwards
             // The FileReader handles the task logic of searching the reference numbers, creating and populating the translation memory
             // And providing the reference numbers back
+
+            logger = new BatchTaskLogger(projectFile.LocalFilePath, LoggingLevels.DEBUG);
+
             task = new FileReader(_settings, projectFile, ref logger);
             multiFileConverter.AddBilingualProcessor(task);
             multiFileConverter.Parse();

@@ -16,12 +16,12 @@ namespace GCSTranslationMemory
             set { _logEntries = value; }
         }
 
-        public BatchTaskLogger() : base() 
+        public BatchTaskLogger(string dirPath) : base(dirPath) 
         {
             this.LogEntries = new List<string>();
         }
 
-        public BatchTaskLogger(LoggingLevels logLevel) : base(logLevel) 
+        public BatchTaskLogger(string dirPath, LoggingLevels logLevel) : base(dirPath, logLevel) 
         {
             this.LogEntries = new List<string>();
         }
