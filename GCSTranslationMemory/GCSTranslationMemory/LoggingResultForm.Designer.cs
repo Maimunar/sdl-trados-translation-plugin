@@ -29,8 +29,13 @@ namespace GCSTranslationMemory
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lbLogs = new System.Windows.Forms.ListBox();
+            this.logsDataGrid = new System.Windows.Forms.DataGridView();
+            this.logsTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logsDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.logsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -43,29 +48,72 @@ namespace GCSTranslationMemory
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lbLogs
+            // logsDataGrid
             // 
-            this.lbLogs.FormattingEnabled = true;
-            this.lbLogs.Location = new System.Drawing.Point(12, 12);
-            this.lbLogs.Name = "lbLogs";
-            this.lbLogs.Size = new System.Drawing.Size(766, 394);
-            this.lbLogs.TabIndex = 2;
+            this.logsDataGrid.AllowUserToAddRows = false;
+            this.logsDataGrid.AllowUserToDeleteRows = false;
+            this.logsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.logsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.logsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.logsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.logsTime,
+            this.logsType,
+            this.logsDescription});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.logsDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.logsDataGrid.Location = new System.Drawing.Point(12, 12);
+            this.logsDataGrid.Name = "logsDataGrid";
+            this.logsDataGrid.ReadOnly = true;
+            this.logsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.logsDataGrid.Size = new System.Drawing.Size(766, 397);
+            this.logsDataGrid.TabIndex = 2;
+            // 
+            // logsTime
+            // 
+            this.logsTime.FillWeight = 50F;
+            this.logsTime.HeaderText = "Time";
+            this.logsTime.Name = "logsTime";
+            this.logsTime.ReadOnly = true;
+            // 
+            // logsType
+            // 
+            this.logsType.FillWeight = 40F;
+            this.logsType.HeaderText = "Type";
+            this.logsType.Name = "logsType";
+            this.logsType.ReadOnly = true;
+            // 
+            // logsDescription
+            // 
+            this.logsDescription.FillWeight = 150F;
+            this.logsDescription.HeaderText = "Description";
+            this.logsDescription.Name = "logsDescription";
+            this.logsDescription.ReadOnly = true;
             // 
             // LoggingResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbLogs);
+            this.Controls.Add(this.logsDataGrid);
             this.Controls.Add(this.btnClose);
             this.Name = "LoggingResultForm";
             this.Text = "LoggingResultForm";
+            ((System.ComponentModel.ISupportInitialize)(this.logsDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListBox lbLogs;
+        private System.Windows.Forms.DataGridView logsDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logsTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logsType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logsDescription;
     }
 }

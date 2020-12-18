@@ -19,6 +19,8 @@ using System.IO;
 
 namespace GCSTranslationMemory
 {
+    //TODO: Properly comment the logging batch task
+
     ///<summary>
     /// Class handles the execution of the GCS batch task
     /// </summary>
@@ -51,7 +53,11 @@ namespace GCSTranslationMemory
         {
             List<string> lines = File.ReadLines(Path.Combine(dirPath, "logs", "Logs.txt")).Reverse().ToList();
 
-            LoggingResultForm output = new LoggingResultForm(lines);
+            List<string[]> logs = new List<string[]>();
+
+            foreach(string line in lines) logs.Add(line.Split('|'));
+
+            LoggingResultForm output = new LoggingResultForm(logs);
 
             output.ShowDialog();
 

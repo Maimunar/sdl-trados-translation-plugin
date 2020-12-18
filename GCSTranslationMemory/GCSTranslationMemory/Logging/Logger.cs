@@ -10,6 +10,7 @@ namespace GCSTranslationMemory
 {
     public class Logger
     {
+        //TODO: Properly comment this class
         private LoggingLevels loggingLevel;
         private string _dirPath;
         private string _fileName;
@@ -67,7 +68,7 @@ namespace GCSTranslationMemory
                 fs = new FileStream(Path.Combine(_dirPath, "logs", _fileName), FileMode.Append, FileAccess.Write);
                 sw = new StreamWriter(fs);
 
-                sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] {logLevel.ToString().PadRight(10)} | {msg}");
+                sw.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] | {logLevel.ToString().PadRight(10)} | {msg}");
             }
             catch (IOException ex)
             {

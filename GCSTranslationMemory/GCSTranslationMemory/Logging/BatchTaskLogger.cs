@@ -8,9 +8,10 @@ namespace GCSTranslationMemory
 {
     public class BatchTaskLogger : Logger
     {
-        private List<string> _logEntries;
+        //TODO: Properly comment this class
+        private List<LogUnit> _logEntries;
 
-        public List<string> LogEntries
+        public List<LogUnit> LogEntries
         {
             get { return _logEntries; }
             set { _logEntries = value; }
@@ -18,18 +19,18 @@ namespace GCSTranslationMemory
 
         public BatchTaskLogger(string dirPath) : base(dirPath) 
         {
-            this.LogEntries = new List<string>();
+            this.LogEntries = new List<LogUnit>();
         }
 
         public BatchTaskLogger(string dirPath, LoggingLevels logLevel) : base(dirPath, logLevel) 
         {
-            this.LogEntries = new List<string>();
+            this.LogEntries = new List<LogUnit>();
         }
 
         protected override void InternalLog(string msg, LoggingLevels logLevel)
         {
             base.InternalLog(msg, logLevel);
-            this.LogEntries.Add($"[{DateTime.Now}] {logLevel.ToString().PadRight(10)} | {msg}");
+            this.LogEntries.Add(new LogUnit(DateTime.Now, logLevel, msg));
         }
     }
 }

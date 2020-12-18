@@ -103,7 +103,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BatchTaskLogger.cs" />
+    <Compile Include="Logging\BatchTaskLogger.cs" />
     <Compile Include="Exceptions\ParagraphAlignmentException.cs" />
     <Compile Include="Exceptions\ReferenceNumberNotFoundException.cs" />
     <Compile Include="FileReader.cs" />
@@ -114,8 +114,9 @@
       <DependentUpon>LoggingResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Logging\LoggingBatchTask.cs" />
+    <Compile Include="LoggingBatchTask.cs" />
     <Compile Include="Logging\LoggingLevels.cs" />
+    <Compile Include="Logging\LogUnit.cs" />
     <Compile Include="SOAPRequestHandler.cs" />
     <Compile Include="TradosUtility\TMExporter.cs" />
     <Compile Include="Utility\HtmlUtility.cs" />

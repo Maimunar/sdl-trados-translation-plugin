@@ -61,11 +61,14 @@ namespace GCSTranslationMemory
             foreach (string refNumber in task.ReferenceNumbers.Distinct())
                 s += $"{refNumber}\n";
 
-            if (logger.LogEntries.Count > 0)
-            {
-                s += "\nFound errors:\n";
-                foreach (string log in logger.LogEntries) s += $"{log}\n";
-            }
+            //TODO: Add log entries to result box
+            //TODO: Convert MessageBox to a custom dialog form
+
+            //if (logger.LogEntries.Count > 0)
+            //{
+            //    s += "\nFound errors:\n";
+            //    foreach (string log in logger.LogEntries) s += $"{log}\n";
+            //}
 
             DialogResult res = MessageBox.Show(s, "References", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
