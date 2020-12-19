@@ -18,8 +18,10 @@ namespace GCSTranslationMemory
 
             foreach (string refNumber in refNumbers) rtbRefNumbers.Text += $"{refNumber}\n";
 
-            if (errors.Count() == 0) this.Height = 250;
-            else errorDataGrid.DataSource = errors;
+            //if (errors.Count() == 0) this.Height = 250;
+            //else errorDataGrid.DataSource = errors;
+            this.Height = 250;
+            errorDataGrid.DataSource = errors;
         }
     }
 }
