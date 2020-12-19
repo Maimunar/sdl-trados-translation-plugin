@@ -154,7 +154,7 @@ namespace GCSTranslationMemory
                 {
                     if (IsAFaultyPair(source[i], target[i]))
                     {
-                        logger.Warning("Detected inconsistency between the source and target language documents. Attempting to perform an automated realignment.");
+                        logger.Warning($"Detected inconsistency between the source and target language documents. Attempting to perform an automated realignment. ({celex_id}, Line {i+1})");
                         int nextIndex = i + 1;
                         if (nextIndex < paragraphCount)
                         {
