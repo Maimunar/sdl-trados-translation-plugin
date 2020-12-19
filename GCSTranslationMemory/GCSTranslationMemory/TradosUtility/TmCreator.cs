@@ -3,7 +3,6 @@ using Sdl.LanguagePlatform.Core.Tokenization;
 using Sdl.LanguagePlatform.TranslationMemory;
 using Sdl.LanguagePlatform.TranslationMemoryApi;
 
-
 namespace GCSTranslationMemory
 {
     /// <summary>
@@ -18,7 +17,7 @@ namespace GCSTranslationMemory
         {
             FileBasedTranslationMemory tm = new FileBasedTranslationMemory(
                 tmPath,
-                "This is a GCS Trados TM",
+                "Generated GCS Translation Memory from EUR-Lex documents",
                 sourceLanguage,
                 targetLanguage,
                 this.GetFuzzyIndexes(),

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GCSTranslationMemory
 {
-    class MyCustomBatchTaskSettingsPage : DefaultSettingsPage<MyCustomBatchTaskSettingsControl, MyCustomBatchTaskSettings>
+    class TMBatchTaskSettingsPage : DefaultSettingsPage<TMBatchTaskSettingsControl, TMBatchTaskSettings>
     {
     }
 }

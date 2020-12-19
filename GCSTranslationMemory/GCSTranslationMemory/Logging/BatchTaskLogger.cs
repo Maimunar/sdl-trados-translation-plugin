@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System;
 
 namespace GCSTranslationMemory
 {
+    /// <summary>
+    /// A subclass of the main logging utility class that extends its functionality by providing a
+    /// container to store log entries only for the duration of a single batch task execution
+    /// </summary>
     public class BatchTaskLogger : Logger
     {
-        //TODO: Properly comment this class
         private List<LogUnit> _logEntries;
 
         public List<LogUnit> LogEntries
@@ -30,7 +30,8 @@ namespace GCSTranslationMemory
         protected override void InternalLog(string msg, LoggingLevels logLevel)
         {
             base.InternalLog(msg, logLevel);
-            this.LogEntries.Add(new LogUnit($"[{DateTime.Now.ToString("yyyy-MM-dd - HH:mm:ss")}] {logLevel.ToString().PadRight(10)} | {msg}"));
+            // Note: Time is configured in specified format; The logging level is padded right by 10 spaces
+            LogEntries.Add(new LogUnit($"[{DateTime.Now:yyyy-MM-dd - HH:mm:ss}] {logLevel, -10} | {msg}"));
         }
     }
 }

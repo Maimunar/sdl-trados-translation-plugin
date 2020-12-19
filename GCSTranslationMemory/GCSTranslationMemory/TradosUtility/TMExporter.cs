@@ -1,10 +1,7 @@
-﻿namespace GCSTranslationMemory
-{
-    using System;
-    using System.Windows.Forms;
-    using Sdl.LanguagePlatform.TranslationMemory;
-    using Sdl.LanguagePlatform.TranslationMemoryApi;
+﻿using Sdl.LanguagePlatform.TranslationMemoryApi;
 
+namespace GCSTranslationMemory
+{
     /// <summary>
     /// Exporter class that handles exporting to a .tmx
     /// Using a stripped down version of the one offered here:  

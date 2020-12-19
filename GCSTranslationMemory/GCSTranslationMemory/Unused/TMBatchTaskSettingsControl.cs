@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GCSTranslationMemory
 {
-    class MyCustomBatchTaskSettingsControl : UserControl, ISettingsAware<MyCustomBatchTaskSettings>
+    class TMBatchTaskSettingsControl : UserControl, ISettingsAware<TMBatchTaskSettings>
     {
         private GroupBox groupBox1;
         private Button btnRestoreDefaults;
@@ -16,26 +16,26 @@ namespace GCSTranslationMemory
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
         // Member that refers to the batch task settings
-        public MyCustomBatchTaskSettings Settings { get; set; }
+        public TMBatchTaskSettings Settings { get; set; }
 
         // Initializes the UI component
-        public MyCustomBatchTaskSettingsControl()
+        public TMBatchTaskSettingsControl()
         {
             InitializeComponent();
         }
-        public void SetSettings(MyCustomBatchTaskSettings taskSettings)
+        public void SetSettings(TMBatchTaskSettings taskSettings)
         {
             // sets the UI element, i.e. the status dropdown list to the corresponding segment status value
             Settings = taskSettings;
             UpdateUI(taskSettings);
         }
-        public void UpdateSettings(MyCustomBatchTaskSettings mySettings)
+        public void UpdateSettings(TMBatchTaskSettings mySettings)
         {
             Settings = mySettings;
         }
 
         // Updates the UI elements to the corresponding settings
-        public void UpdateUI(MyCustomBatchTaskSettings mySettings)
+        public void UpdateUI(TMBatchTaskSettings mySettings)
         {
             Settings = mySettings;
             this.UpdateSettings(Settings);

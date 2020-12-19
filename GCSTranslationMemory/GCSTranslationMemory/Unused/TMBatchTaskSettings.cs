@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GCSTranslationMemory
 {
     //A template class with no functionality and a resettodefaults function for the button
-    class MyCustomBatchTaskSettings : SettingsGroup
+    class TMBatchTaskSettings : SettingsGroup
     {
 
         public void ResetToDefaults()

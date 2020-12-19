@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,7 +8,7 @@ namespace GCSTranslationMemory
 {
     /// <summary>
     /// A utility class that provides html-based methods
-    /// </summary> 
+    /// </summary>
     public static class HtmlUtility
     {
         /// <summary>

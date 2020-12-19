@@ -1,12 +1,8 @@
 ﻿using Sdl.FileTypeSupport.Framework.BilingualApi;
-using Sdl.Core.Globalization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Sdl.LanguagePlatform.TranslationMemoryApi;
 using Sdl.LanguagePlatform.TranslationMemory;
@@ -17,22 +13,21 @@ using System.Xml;
 namespace GCSTranslationMemory
 {
     /// <summary>
-    /// This class takes responsibility of reading the reference numbers and creating the translation memory for
-    ///  all of the ones that fit the criteria 
+    /// This class takes responsibility of reading the reference numbers and creating the translation memory from
+    /// all numbers that fit the criteria
     /// </summary>
     class FileReader : AbstractBilingualContentProcessor
     {
-        private MyCustomBatchTaskSettings _taskSettings;
-        private string _inputFilePath;
-        private TMDetails tmDetails;
+        // Note: This is not currently in use. Marked for potential deletion
+        //private readonly TMBatchTaskSettings _taskSettings;
+        //private readonly string _inputFilePath;
+
+        private readonly TMDetails tmDetails;
         
         private List<String> referenceNumbers;
         FileBasedTranslationMemory tm;
-        string tmxDir;
-
-        BatchTaskLogger logger;
-        List<string> iterationLogs;
-
+        readonly string tmxDir;
+        readonly BatchTaskLogger logger;
 
         /// <summary>
         /// This property is used for communicating the reference numbers outside of the class
@@ -50,15 +45,16 @@ namespace GCSTranslationMemory
         /// </summary>
         /// <param name="settings"></param>
         /// <param name="projectFile"></param>
-        public FileReader(MyCustomBatchTaskSettings settings, ProjectFile projectFile, ref BatchTaskLogger logger)
+        public FileReader(TMBatchTaskSettings settings, ProjectFile projectFile, ref BatchTaskLogger logger)
         {
-            _taskSettings = settings;
-            _inputFilePath = projectFile.LocalFilePath;
-            referenceNumbers = new List<string>();
-            tmDetails = new TMDetails();
+            // Note: This is not currently in use. Marked for potential deletion
+            //this._taskSettings = settings;
+            //this._inputFilePath = projectFile.LocalFilePath;
+
+            this.referenceNumbers = new List<string>();
+            this.tmDetails = new TMDetails();
 
             this.logger = logger;
-            iterationLogs = new List<string>();
 
             // Setting up language abbreviations in the TM details class
             tmDetails.SourceLanguage = projectFile.SourceFile.Language.CultureInfo;
@@ -98,12 +94,11 @@ namespace GCSTranslationMemory
 
                                 if (nodeList.Count == 0) throw new ReferenceNumberNotFoundException();
 
-                                foreach (XmlNode node in nodeList)
-                                    CreateEURLEXTranslationMemory(node.InnerText, ref tm);
+                                foreach (XmlNode node in nodeList) ProcessEURLEXDocument(node.InnerText, ref tm);
                             }
-                            catch (ReferenceNumberNotFoundException ex)
+                            catch (ReferenceNumberNotFoundException)
                             {
-                                logger.Error($"The found reference number ({match.Value}) does not exist in the EUR-Lex database");
+                                logger.Error($"The found reference number ({match.Value}) does not exist in the EUR-Lex database.");
                             }
                             catch (System.Net.WebException)
                             {
@@ -130,20 +125,20 @@ namespace GCSTranslationMemory
                 TMExporter objTmExport = new TMExporter();
                 objTmExport.ExportTMXFile(tm.FilePath, tmxDir);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 logger.Error("Failed to convert the aligned HTML documents to a TMX format.");
             }
             
-
             base.Complete();
         }
+
         /// <summary>
         /// This is the main function which deals with the creation of the translation memory's content
         /// </summary>
         /// <param name="celex_id"></param>
         /// <param name="tm"></param>
-        private void CreateEURLEXTranslationMemory(string celex_id, ref FileBasedTranslationMemory tm)
+        private void ProcessEURLEXDocument(string celex_id, ref FileBasedTranslationMemory tm)
         {
             // Getting the full html code for the source and target language and extracting the paragraphs
             try
@@ -155,12 +150,11 @@ namespace GCSTranslationMemory
                 int paragraphCount = Math.Min(source.Count, target.Count);
                 // Creation of all translation units for a specific document
 
-                // TODO: Log all documents (their CELEX numbers) that do not have equal length between languages (which results in missing translation pairs in translation memory)
-
                 for (int i = 0; i < paragraphCount; i++)
                 {
                     if (IsAFaultyPair(source[i], target[i]))
                     {
+                        logger.Warning("Detected inconsistency between the source and target language documents. Attempting to perform an automated realignment.");
                         int nextIndex = i + 1;
                         if (nextIndex < paragraphCount)
                         {
@@ -171,9 +165,11 @@ namespace GCSTranslationMemory
                         }
                     }
 
-                    TranslationUnit tu = new TranslationUnit();
-                    tu.SourceSegment = new Segment(tmDetails.SourceLanguage);
-                    tu.TargetSegment = new Segment(tmDetails.TargetLanguage);
+                    TranslationUnit tu = new TranslationUnit
+                    {
+                        SourceSegment = new Segment(tmDetails.SourceLanguage),
+                        TargetSegment = new Segment(tmDetails.TargetLanguage)
+                    };
                     tu.SourceSegment.Add(source.ElementAtOrDefault(i) != null ? source[i] : "KUREC");
                     tu.TargetSegment.Add(target.ElementAtOrDefault(i) != null ? target[i] : "KUREC");
                     tm.LanguageDirection.AddTranslationUnit(tu, Utility.GetImportSettings());
@@ -182,11 +178,11 @@ namespace GCSTranslationMemory
                 if (source.Count != target.Count) throw new ParagraphAlignmentException();
 
             }
-            catch (ParagraphAlignmentException ex)
+            catch (ParagraphAlignmentException)
             {
-                logger.Error($"The text aligning process failed for document with CELEX {celex_id}. The length of the source and target documents do not match.");
+                logger.Error($"The text aligning process failed for document with CELEX {celex_id} due to missing translation pairs. The length of the source and target documents do not match.");
             }
-            catch (System.Net.WebException ex)
+            catch (System.Net.WebException)
             {
                 logger.Error("The source or target or both texts are not available on EUR-Lex for the corresponding reference number.");
             }

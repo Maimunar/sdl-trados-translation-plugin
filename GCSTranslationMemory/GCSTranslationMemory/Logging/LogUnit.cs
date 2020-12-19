@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GCSTranslationMemory
+﻿namespace GCSTranslationMemory
 {
+    /// <summary>
+    /// A class structure to store logging entry data
+    /// </summary>
     public class LogUnit
     {
-        //TODO: Comments. Used for data grids
-        private string _logEntry;
+        private readonly string _logEntry;
 
         public string Entry => _logEntry;
 

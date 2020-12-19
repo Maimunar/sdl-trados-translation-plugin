@@ -118,24 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Logging_Batch_Task_Description" xml:space="preserve">
-    <value>GCS - View Logfiles</value>
+    <value>Fetches and displays all available logs</value>
   </data>
   <data name="Logging_Batch_Task_ID" xml:space="preserve">
-    <value>GCS - Logfiles</value>
+    <value>GCSLog</value>
   </data>
   <data name="Logging_Batch_Task_Name" xml:space="preserve">
     <value>GCS - View Logfiles</value>
   </data>
-  <data name="My_Custom_Batch_Task_Description" xml:space="preserve">
-    <value>GCS - Create Translation Memory</value>
-  </data>
-  <data name="My_Custom_Batch_Task_ID" xml:space="preserve">
-    <value>GCS</value>
-  </data>
-  <data name="My_Custom_Batch_Task_Name" xml:space="preserve">
-    <value>GCS - Create Translation Memory</value>
-  </data>
   <data name="Plugin_Name" xml:space="preserve">
     <value>GCSTranslationMemory</value>
+  </data>
+  <data name="TM_Batch_Task_Description" xml:space="preserve">
+    <value>Creates a translation memory from found reference numbers in target file</value>
+  </data>
+  <data name="TM_Batch_Task_ID" xml:space="preserve">
+    <value>GCSTM</value>
+  </data>
+  <data name="TM_Batch_Task_Name" xml:space="preserve">
+    <value>GCS - Create Translation Memory</value>
   </data>
 </root>
