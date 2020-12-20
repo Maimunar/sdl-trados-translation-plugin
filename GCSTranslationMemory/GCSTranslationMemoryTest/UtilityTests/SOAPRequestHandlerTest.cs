@@ -3,7 +3,7 @@ using System.Xml;
 using System.Net;
 using GCSTranslationMemory;
 
-namespace GCSTranslationMemoryTest
+namespace GCSTranslationMemoryTest.UtilityTests
 {
     [TestClass]
     public class UnitTest1
