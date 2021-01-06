@@ -1,37 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj": {}
+    "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj": {
+    "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj",
+        "projectUniqueName": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj",
         "projectName": "GCSTranslationMemoryTest",
-        "projectPath": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj",
-        "packagesPath": "C:\\Users\\galsa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\obj\\",
+        "projectPath": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\GCSTranslationMemoryTest.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemoryTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\galsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj": {
-                "projectPath": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj"
+              "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj": {
+                "projectPath": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj"
               }
             }
           }
@@ -44,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -58,25 +58,31 @@
               "version": "[15.9.0, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj": {
-      "version": "1.0.0",
+    "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj",
+        "projectUniqueName": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj",
         "projectName": "GCSTranslationMemory",
-        "projectPath": "C:\\Users\\galsa\\OneDrive\\Документи\\Fontys\\Software Engineering\\Semester 3\\Project\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj"
+        "projectPath": "D:\\Archive\\University\\sem3\\Amplexor\\sdl-trados-plugin\\GCSTranslationMemory\\GCSTranslationMemory\\GCSTranslationMemory.csproj"
       },
       "frameworks": {
         "net472": {}
