@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GCSTranslationMemory;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
