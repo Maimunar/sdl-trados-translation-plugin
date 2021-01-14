@@ -103,9 +103,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FeedbackForm.Designer.cs">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCSFeedbackAction.cs" />
+    <Compile Include="GCSRibbonGroup.cs" />
     <Compile Include="Logging\BatchTaskLogger.cs" />
     <Compile Include="Exceptions\ParagraphAlignmentException.cs" />
     <Compile Include="Exceptions\ReferenceNumberNotFoundException.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility\FileReader.cs" />
     <Compile Include="Forms\LoggingResultForm.cs">
       <SubType>Form</SubType>
@@ -139,8 +152,16 @@
     <Compile Include="Utility\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\feedback.ico" />
+    <EmbeddedResource Include="Forms\FeedbackForm.resx">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoggingResultForm.resx">
       <DependentUpon>LoggingResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Unused\TMBatchTaskSettingsControl.resx">
       <DependentUpon>TMBatchTaskSettingsControl.cs</DependentUpon>
